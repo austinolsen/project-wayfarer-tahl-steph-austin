@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {browserHistory} from 'react-router';
 import $ from 'jquery-ajax';
 
 class Home extends Component {
@@ -7,12 +8,12 @@ class Home extends Component {
     this.state={
       username: '', password: '', id:'', isAuthenticated: false
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
+    this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
+    this.handleLoginPasswordChange = this.handleLoginPasswordChange.bind(this);
+    this.handleLoginUsernameChange = this.handleLoginUsernameChange.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
-  handleSubmit(e){
+  handleLoginSubmit(e){
     e.preventDefault();
     let username = this.state.username;
     let password = this.state.password;
@@ -35,10 +36,10 @@ class Home extends Component {
   handleLogout(){
       this.setState({isAuthenticated: false, id:''});
   }
-  handleUsernameChange(e){
+  handleLoginUsernameChange(e){
     this.setState({username: e.target.value});
   }
-  handlePasswordChange(e){
+  handleLoginPasswordChange(e){
     this.setState({password: e.target.value});
   }
   getInitialState(){
@@ -47,30 +48,53 @@ class Home extends Component {
       }
     }
 
-  render() {
-    return (
-      <div className="homePage">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#myPage"><img src="img/ladybug.png" alt="ladybug-logo" height="28"/>WF</a>
+    render() {
+      if(this.state.isAuthenticated === false){
+      return (
+        <div className="homePage">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage"><img src="img/ladybug.png" alt="ladybug-logo" height="28"/>WF</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/signin">SIGN UP</a></li>
+                  <li><a href="/signin">LOG IN</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="/signin">SIGN UP</a></li>
-                <li><a href="/signin">LOG IN</a></li>
-              </ul>
+          </nav>
+        </div>
+      );
+    } else {
+      return (
+        <div className="homePage">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage"><img src="img/ladybug.png" alt="ladybug-logo" height="28"/>WF</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/signin">LOG OUT</a></li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
-      </div>
-    );
+          </nav>
+        </div>
+      )
+    }
   }
 }
-
 export default Home;
