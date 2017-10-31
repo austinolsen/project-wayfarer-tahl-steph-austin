@@ -279,6 +279,7 @@
             </div>
           </div>
         </div>
+      </div>
         <!-- SELECTED CITY DISPLAY ENDS -->
 
 
@@ -290,9 +291,13 @@
                   <img src="img/ladybug.png" class="media-object" alt="San Francisco" width="120" height="110">
                 </div>
                 <div class="media-body">
+
+                  <!-- #test needs to be produced with a new matching id for the toggle -->
                   <h2><a  data-toggle="collapse" data-target="#test">Title: This is the title of the post.</a></h2>
                   <h2><i>Steph <small> - Posted on October 28, 2017</i></small></h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                  <!-- #test needs to be produced with a new matching id for the toggle -->
                   <div id="test" class="collapse in">
                     <div class="media">
                       <div class="media-left">
@@ -306,7 +311,10 @@
                   </div>
                   <br>
                   <form>
-                    <input type="text" name="commentInput" placeholder="add comment...">
+                    <div class="form-group">
+                      <label for="comment">Comment:</label>
+                      <textarea class="form-control" rows="2" id="comment"></textarea>
+                    </div>
                     <input type="button" value="Submit">
                   </form>
                 </div>
@@ -323,10 +331,16 @@
                   <img src="img/ladybug.png" class="media-object" alt="San Francisco" width="120" height="110">
                 </div>
                 <div class="media-body">
-                  <h2><a  data-toggle="collapse" data-target="#test">Title: This is the title of the post.</a></h2>
+
+                  <!-- #test needs to be produced with a new matching id for the toggle -->
+                  <h2>Title: This is the title of the post.</a></h2>
                   <h2><i>Steph <small> - Posted on October 28, 2017</i></small></h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <div id="test" class="collapse in">
+                  <div class="text-center">
+                  <a data-toggle="collapse" data-target="#test1"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                </div>
+                  <!-- #test needs to be produced with a new matching id for the toggle -->
+                  <div id="test1" class="collapse in">
                     <div class="media">
                       <div class="media-left">
                         <img src="img/f-flower-1.jpg" class="media-object" alt="San Francisco" width="90" height="80">
@@ -338,18 +352,18 @@
                     </div>
                   </div>
                   <br>
+                  <form>
+                    <div class="form-group">
+                      <label for="comment">Comment:</label>
+                      <textarea class="form-control" rows="2" id="comment"></textarea>
+                    </div>
+                    <input type="button" value="Submit">
+                  </form>
                 </div>
-                <form>
-                  <div class="form-group">
-                    <label for="comment">Comment:</label>
-                    <textarea class="form-control" rows="2" id="comment"></textarea>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
         </div>
-
 
 
 

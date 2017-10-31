@@ -143,3 +143,7 @@ body {
   .cityTarget {
     font-size: 20px;
   }
+
+  span.glyphicon.glyphicon-chevron-down {
+    font-size: 2em;
+  }
