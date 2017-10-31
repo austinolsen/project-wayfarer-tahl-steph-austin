@@ -9,7 +9,7 @@ import Post from './Post'
 var routes = (
 	<div>
 		<Route path ='/' component={Home} />
-    <Route path='/signup' component={SignupLogin}/>
+    <Route path='/signin' component={SignupLogin}/>
     <Route path='/profile' component={PublicProfile}/>
     <Route path='/cities' component={Cities}/>
     <Route path='/post' component={Post}/>
