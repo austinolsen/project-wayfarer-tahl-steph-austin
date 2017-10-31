@@ -17,6 +17,20 @@ class PublicProfile extends Component{
           </div>
         </div>
       </div>
+
+      // {/* <div id="profilePage">
+      //   <div class="container">
+      //     <img id="profile-avatar" />
+      //     <!--         <img src="https://www.proflowers.com/blog/wp-content/uploads/2014/03/tulip-thumbnail-350x240.jpg" width="100"/>
+      // -->
+      //     <h2><span id="profile-name"></span></h2>
+      //     <h3>Current City: <span id="profile-city"></span></h3>
+      //     <div class="postSummary"></div>
+      //
+      //   </div>
+      // </div> */}
+
+
     )
   }
 }

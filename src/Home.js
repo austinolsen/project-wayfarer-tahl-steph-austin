@@ -52,18 +52,18 @@ class Home extends Component {
       if(this.state.isAuthenticated === false){
       return (
         <div className="homePage">
-          <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+          <nav className="navbar navbar-default navbar-fixed-top">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#myPage"><img src="img/ladybug.png" alt="ladybug-logo" height="28"/>WF</a>
+                <a className="navbar-brand" href="#myPage"><img src="img/ladybug.png" alt="ladybug-logo" height="28"/>WF</a>
               </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
+              <div className="collapse navbar-collapse" id="myNavbar">
+                <ul className="nav navbar-nav navbar-right">
                   <li><a href="/signin">SIGN UP</a></li>
                   <li><a href="/signin">LOG IN</a></li>
                 </ul>
@@ -74,19 +74,19 @@ class Home extends Component {
       );
     } else {
       return (
-        <div className="homePage">
-          <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+        <div classNameName="homePage">
+          <nav className="navbar navbar-default navbar-fixed-top">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#myPage"><img src="img/ladybug.png" alt="ladybug-logo" height="28"/>WF</a>
+                <a className="navbar-brand" href="#myPage"><img src="img/ladybug.png" alt="ladybug-logo" height="28"/>WF</a>
               </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
+              <div className="collapse navbar-collapse" id="myNavbar">
+                <ul className="nav navbar-nav navbar-right">
                   <li><a href="/signin">LOG OUT</a></li>
                 </ul>
               </div>
