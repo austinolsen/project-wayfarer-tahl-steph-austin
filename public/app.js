@@ -43,12 +43,12 @@ $(document).ready(function() {
       date: "1979-05-15"
     }
   ];
-  postDB = [
+  postDb = [
     {
       postRef: "12",
       location: "Vancouver",
-      title: "This is why you should visit V BC",
-      content: "Vancouver BC is not just a winter wonderland, so forth"
+      title: "This is why you should visit Vancouver BC",
+      comment: "Vancouver BC is not just a winter wonderland, so forth"
     }, {
       postRef: "24",
       location: "London",
@@ -61,6 +61,19 @@ $(document).ready(function() {
       comment: "Since the first time I visit San Francisco until today..."
     }
   ];
+  avatarDb = [
+    'f-flower-1.jpg', 'f-flower-2.jpg', 'f-iris-1.jpg', 
+    'f-lily-1.jpg', 'f-rose-1.jpg', 'f-rose-2'
+  ]
+
+  $('#profile-avatar').attr('src','img/'+avatarDb[2]);
+  $('#profile-name').html(userDb[0].firstName + ' ' + userDb[0].lastName);
+  $('#profile-city').html(userDb[0].location);
+  for(var j=0; j<postDb.length; j++) { 
+    $('.postSummary').append(`<p>Title: ${postDb[j].title}</p><p>Comment: ${postDb[j].comment}</p><br/>`)
+  }
+
+
   // Initialize Tooltip
   $('[data-toggle="tooltip"]').tooltip();
 
