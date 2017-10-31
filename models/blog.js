@@ -6,7 +6,10 @@ var BlogPost = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
-
+  title: String,
+  location: String,
+  content: String,
+  date: Date
 })
 
 var BlogPost = mongoose.model('BlogPost', BlogPostSchema);
