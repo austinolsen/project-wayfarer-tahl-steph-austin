@@ -140,3 +140,6 @@ body {
   textarea {
       resize: none;
   }
+  .cityTarget {
+    font-size: 20px;
+  }
