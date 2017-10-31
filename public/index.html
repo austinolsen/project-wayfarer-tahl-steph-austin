@@ -70,7 +70,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="img/San Francisco.jpg" alt="San Francisco"  width="1200" height="600">
+          <img src="img/San Francisco.jpg" alt="San Francisco" width="1200" height="600">
           <div class="carousel-caption">
             <h3>San Francisco</h3>
             <p class="titleMessage">The atmosphere in San Francisco is lorem ipsum.</p>
@@ -78,7 +78,7 @@
         </div>
 
         <div class="item">
-          <img src="img/New York.jpeg" alt="New York"  width="1200" height="600">
+          <img src="img/New York.jpeg" alt="New York" width="1200" height="600">
           <div class="carousel-caption">
             <h3>New York</h3>
             <p class="titleMessage">Thank you, New York - A night we won't forget.</p>
@@ -112,7 +112,7 @@
       <div class="row">
         <div class="col-sm-4">
           <p class="text-center"><strong>Inspiration</strong></p><br>
-            <p>Put an image here</p>
+          <p>Put an image here</p>
         </div>
         <div class="col-sm-4">
           <p class="text-center"><strong>Knowledge</strong></p><br>
@@ -143,22 +143,25 @@
             <option value="iris">Iris</option>
           </select>
           <br>
-          <input id="signupBtn" type="submit" value="Submit"/>
+          <input id="signupBtn" type="submit" value="Submit" />
         </form>
       </div>
 
-    <hr>
-    <div id="loginPage" class="bg-1">
-      <div class="container">
-        <h3 class="text-center">Login</h3>
-        <form class="form-horizontal">
-          <input type="text" name="username" placeholder="username" required/>
-          <input type="password" name="password" placeholder="password" required/>
-          <br>
-          <input id="signupBtn" type="submit" value="Submit"/>
-        </form>
+      <hr>
+
+      <!-- Log-in form -->
+      <div id="loginPage" class="bg-1">
+        <div class="container">
+          <h3 class="text-center">Login</h3>
+          <form class="form-horizontal">
+            <input type="text" name="username" placeholder="username" required/>
+            <input type="password" name="password" placeholder="password" required/>
+            <br>
+            <input id="signupBtn" type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
-    </div>
+
 
     <hr>
     <div id="profilePage">
@@ -168,78 +171,128 @@
  -->        <h2><span id="profile-name"></span></h2>
         <h3>Current City: <span id="profile-city"></span></h3>
         <div class="postSummary"></div>
+
         </div>
       </div>
-    </div>
 
-<hr>
+      <hr>
 
-<div id="cityPage">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <h2>Cities</h2>
-        <br>
-        <!--  this is repeated for each city-->
+<!-- City List/Home page -->
+      <div id="cityPage">
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              San Francisco
+            <div class="col-sm-5">
+              <h2>Cities</h2>
               <br>
-              New York
-              <br>
-              Vancouver
+              <div class="cityTarget">
+
+<!--  this is repeated for each city-->
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="img/San Francisco.jpg" alt="San Francisco" width="200" height="100"> San Franciso
+                  </div>
+                </div>
+                <br>
+<!-- city selector end -->
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="img/New York.jpeg" alt="New York" width="200" height="100"> New York
+                  </div>
+                </div>
+                <br>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="img/Vancouver.jpg" alt="Vancouver" width="200" height="100"> Vancouver
+                  </div>
+                </div>
+                <br>
+
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="row">
+
+<!-- SELECTED CITY DISPLAY COMPONENT -->
+
+<!-- Selected City Display           -->
+                <h2>San Francisco</h2>
+                <div class="media">
+                  <div class="media-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div class="media-right">
+                    <img src="img/San Francisco.jpg" class="media-object" alt="San Francisco" width="270" height="135">
+                  </div>
+                </div>
+
+<!-- Display end -->
+
+                  <h2>City Posts</h2>
+
+<!-- Repeat for selected city posts -->
+                  <div class="media">
+                    <div class="media-left">
+                      <img src="img/ladybug.png" class="media-object" alt="San Francisco" width="90" height="80">
+                    </div>
+                    <div class="media-body">
+                      <h5>Steph</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                  </div>
+<!-- Selected city post end -->
+
+                  <div class="media">
+                    <div class="media-left">
+                      <img src="img/ladybug.png" class="media-object" alt="San Francisco" width="90" height="80">
+                    </div>
+                    <div class="media-body">
+                      <h5>Steph</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left">
+                      <img src="img/ladybug.png" class="media-object" alt="San Francisco" width="90" height="80">
+                    </div>
+                    <div class="media-body">
+                      <h5>Steph</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left">
+                      <img src="img/ladybug.png" class="media-object" alt="San Francisco" width="90" height="80">
+                    </div>
+                    <div class="media-body">
+                      <h5>Steph</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                  </div>
+
+<!-- SELECTED CITY CONTINUES -->
+
+                </div>
+              </div>
             </div>
           </div>
-        <!--  end of city row-->
-    </div>
-    <div class="col-sm-8">
-      <h2>City Posts</h2>
-  </div>
-</div>
-</div>
-</div>
+<!-- SELECTED CITY DISPLAY ENDS -->
 
 
 
-        <!-- <div class="row text-center">
-          <div class="col-sm-4">
-            <div class="thumbnail">
-              <img src="paris.jpg" alt="Paris" width="400" height="300">
-              <p><strong>Paris</strong></p>
-              <p>Friday 27 November 2015</p>
-              <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="thumbnail">
-              <img src="newyork.jpg" alt="New York" width="400" height="300">
-              <p><strong>New York</strong></p>
-              <p>Saturday 28 November 2015</p>
-              <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="thumbnail">
-              <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-              <p><strong>San Francisco</strong></p>
-              <p>Sunday 29 November 2015</p>
-              <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
-            </div>
-          </div>
-        </div> -->
 
-
-
-    <footer class="text-center">
-      <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+          <footer class="text-center">
+            <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
         <span class="glyphicon glyphicon-chevron-up"></span>
       </a><br><br>
-      <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>
-    </footer>
+            <p>Wayfarer</p>
+          </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
 
 
