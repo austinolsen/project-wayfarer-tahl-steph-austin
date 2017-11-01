@@ -4,7 +4,17 @@ body {
   font-family: sans-serif;
 }
 
-.homePage{
+#appName {
+  margin: 0;
+  float: left;
+  padding: 11px 20px;
+}
+#createdBy {
+  margin: 0;
+  float: right;
+  padding: 11px 20px;
+}
+#homePage{
   background-color: red;
   color: black;
 }
