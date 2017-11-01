@@ -4,6 +4,7 @@ class Cities extends Component {
   render() {
     return (
       <div>
+        <br/>
         <div id="cityPage">
           <div className="container-fluid">
             <div className="row">
