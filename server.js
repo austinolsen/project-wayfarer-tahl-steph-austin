@@ -61,3 +61,41 @@ app.use(function (req, res, next) {
   res.setHeader('Cache-Control', 'no-cache');
   next();
 });
+
+//BlogPost routes
+//CREATE (post) on city page
+//READ 1 (get) on blogpost page
+//READ ALL (get) by cityname on city page
+//READ ALL (get) on userID on profile page
+
+//Comments routes
+//CREATE (post) on blogpost page
+//READ ALL (get) by postId on blogpost page
+//READ ALL (get) by userId on profile page
+
+//USER routes
+//READ 1 (get) by userId on profile page
+//UPDATE (put) by userId on profile page
+
+//AUTH Routes
+//CREATE (post) on signup modal
+//NEED TO EDIT FOR OUR OWN APP
+app.post('/signup', function signup(req, res) {
+  console.log(`${req.body.username} ${req.body.password}`);
+  User.register(new User({ username: req.body.username }), req.body.password,
+    function (err, newUser) {
+      passport.authenticate('local')(req, res, function() {
+        res.send(newUser);
+      });
+    }
+  )});
+app.post('/login', passport.authenticate('local'), function (req, res) {
+  console.log(JSON.stringify(req.user));
+  res.send(req.user);
+});
+app.get('/logout', function (req, res) {
+  console.log("BEFORE logout", req);
+  req.logout();
+  res.send(req);
+  console.log("AFTER logout", req);
+});
