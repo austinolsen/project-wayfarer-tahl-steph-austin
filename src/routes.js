@@ -5,10 +5,11 @@ import SignupLogin from './SignupLogin'
 import PublicProfile from './PublicProfile'
 import Cities from './Cities'
 import Post from './Post'
+import Layout from './Layout'
 
 var routes = (
 	<div>
-		<Route path ='/' component={Home} />
+		<Route path ='/' component={Layout} />
     <Route path='/signin' component={SignupLogin}/>
     <Route path='/profile' component={PublicProfile}/>
     <Route path='/cities' component={Cities}/>
