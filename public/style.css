@@ -92,7 +92,7 @@ body {
   }
   .navbar {
       font-family: Montserrat, sans-serif;
-      margin-bottom: 0;
+      margin-bottom: 30px;
       background-color: #2d2d30;
       border: 0;
       font-size: 11px !important;
@@ -101,6 +101,7 @@ body {
   }
   .navbar li a, .navbar .navbar-brand {
       color: #d5d5d5 !important;
+      
   }
   .navbar-nav li a:hover {
       color: #fff !important;
