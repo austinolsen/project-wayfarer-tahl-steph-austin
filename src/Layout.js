@@ -58,7 +58,9 @@ class Layout extends Component {
     render() {
       return (
         <div>
-            <Header />
+            <Header
+              isAuthed={this.state.isAuthenticated}
+            />
               {this.props.children}
             <Footer />
         </div>

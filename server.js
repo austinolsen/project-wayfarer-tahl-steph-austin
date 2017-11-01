@@ -1,10 +1,10 @@
-var express = require('express'),
+var express = require('express')
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 var session = require('express-session')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
-
+var db = require("./models")
 
 var app = express(),
   router = express.Router();
@@ -30,6 +30,7 @@ var app = express(),
       location: "Your Dreams, MN"
     }
   ];
+
   //to config API to use body body-parser and look for JSON in req.body
 app.use(bodyParser.urlencoded({
   extended: true
@@ -82,7 +83,7 @@ app.use(function (req, res, next) {
 //NEED TO EDIT FOR OUR OWN APP
 app.post('/signup', function signup(req, res) {
   console.log(`${req.body.username} ${req.body.password}`);
-  User.register(new User({ username: req.body.username }), req.body.password,
+  db.User.register(new db.User({ username: req.body.username }), req.body.password,
     function (err, newUser) {
       passport.authenticate('local')(req, res, function() {
         res.send(newUser);
@@ -93,9 +94,15 @@ app.post('/login', passport.authenticate('local'), function (req, res) {
   console.log(JSON.stringify(req.user));
   res.send(req.user);
 });
+
 app.get('/logout', function (req, res) {
   console.log("BEFORE logout", req);
   req.logout();
   res.send(req);
   console.log("AFTER logout", req);
+});
+
+const port = process.env.API_PORT || 3001;
+app.listen(port, function(){
+  console.log(`api running on ${port}`);
 });
