@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {browserHistory} from 'react-router';
 
 class Home extends Component {
+  constructor(props){
+    super(props)
+    console.log(this.props.location)
+  }
     render() {
       return (
         <div id="myCarousel" className="carousel slide" data-ride="carousel">
