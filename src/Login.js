@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-import $ from 'jquery-ajax';
-import {browserHistory} from 'react-router';
 import Modal from 'react-modal'
 
 class Login extends Component{
@@ -9,11 +7,12 @@ class Login extends Component{
     this.state = {
       username: '', password: '', modalIsOpen: false
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.openLogin = this.openLogin.bind(this)
-    this.closeLogin = this.closeLogin.bind(this)
+    this.openLogin=this.openLogin.bind(this)
+    this.closeLogin=this.closeLogin.bind(this)
+    this.handleUsernameChange=this.handleUsernameChange.bind(this)
+    this.handlePasswordChange=this.handlePasswordChange.bind(this)
+    this.handleLoginSubmit=this.handleLoginSubmit.bind(this)
+
   }
 
   closeLogin(){
@@ -26,37 +25,18 @@ class Login extends Component{
     this.setState({modalIsOpen: true})
 
   }
-  handleSubmit(e){
-    console.log("handling login submit")
-    e.preventDefault();
-    let username = this.state.username;
-    let password = this.state.password;
-    console.log(username)
-    console.log(password)
-    $.ajax({
-      method: 'POST',
-      url: `http://localhost:3001/login`,
-      data: {
-        username: username,
-        password: password
-      }
-    })
-    .then(res => {
-      console.log('res is ', res);
-      this.setState({modalIsOpen: false})
-      browserHistory.push('/profile');
-
-    }, err => {
-      console.log("we hit an error")
-      console.log(err);
-    });
-  }
   handleUsernameChange(e){
     this.setState({username: e.target.value});
     console.log(this.state.username)
   }
   handlePasswordChange(e){
     this.setState({password: e.target.value});
+  }
+  handleLoginSubmit(e){
+    e.preventDefault();
+    console.log("PROPS: ", this.props)
+    this.props.login(this.state.username, this.state.password, e)
+    this.setState({modalIsOpen: false})
   }
   render(){
     return(
@@ -66,7 +46,7 @@ class Login extends Component{
           isOpen={this.state.modalIsOpen}
         >
           <h3 className="text-center">Login</h3>
-                <form className="form-horizontal" onSubmit={ this.handleSubmit }>
+                <form className="form-horizontal" onSubmit={ this.handleLoginSubmit }>
                   <input
                       onChange={this.handleUsernameChange}
                       type="text"

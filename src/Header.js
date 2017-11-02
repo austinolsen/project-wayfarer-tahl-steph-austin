@@ -1,14 +1,11 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router'
-import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
 
 class Header extends Component{
-  constructor(props){
-    super(props)
-  }
   render(){
+    console.log("IS AUTHED in header:", this.props.isAuthed)
     if(this.props.isAuthed===false){
     return(
       <div>
@@ -20,13 +17,13 @@ class Header extends Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#myPage"><img src="img/ladybug.png" height="28"/></a>
+              <a className="navbar-brand" href="#myPage"><img alt="avatar" src="img/ladybug.png" height="28"/></a>
               <p id="brandInitials">WF</p>
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
                 <li><Signup/></li>
-                <li><Login/></li>
+                <li><Login login={this.props.login}/></li>
               </ul>
             </div>
           </div>
@@ -44,7 +41,7 @@ class Header extends Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#myPage"><img src="img/ladybug.png" height="28"/></a>
+              <a className="navbar-brand" href="#myPage"><img alt="avatar" src="img/ladybug.png" height="28"/></a>
               <p id="brandInitials">WF</p>
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
