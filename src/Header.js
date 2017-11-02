@@ -22,7 +22,7 @@ class Header extends Component{
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
-                <li><Signup/></li>
+                <li><Signup signup={this.props.signup}/></li>
                 <li><Login login={this.props.login}/></li>
               </ul>
             </div>
@@ -47,7 +47,7 @@ class Header extends Component{
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
                 <li><Link to={'/profile'}>My Profile</Link></li>
-                <li><Link to={'/logout'}>LOGOUT</Link></li>
+                <li onClick={this.props.logout}>LOGOUT</li>
               </ul>
             </div>
           </div>

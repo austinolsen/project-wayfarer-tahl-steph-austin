@@ -4,14 +4,16 @@ import {browserHistory} from 'react-router';
 import $ from 'jquery-ajax';
 
 class Signup extends Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
-      modalIsOpen: false
+      username: '', password: '', modalIsOpen: false
     }
-    this.handleSubmit=this.handleSubmit.bind(this)
+    this.handleSignupSubmit=this.handleSignupSubmit.bind(this)
     this.openSignup=this.openSignup.bind(this)
     this.closeSignup=this.closeSignup.bind(this)
+    this.handleUsernameChange=this.handleUsernameChange.bind(this)
+    this.handlePasswordChange=this.handlePasswordChange.bind(this)
   }
 
   closeSignup(){
@@ -23,30 +25,11 @@ class Signup extends Component{
     console.log('clickedSignup')
     this.setState({modalIsOpen: true})
   }
-  handleSubmit(e){
+  handleSignupSubmit(e){
     console.log("handling signup submit")
     e.preventDefault();
-    let username = this.state.username;
-    let password = this.state.password;
-    console.log(username)
-    console.log(password)
-    $.ajax({
-      method: 'POST',
-      url: `http://localhost:3001/signup`,
-      data: {
-        username: username,
-        password: password
-      }
-    })
-    .then(res => {
-      console.log('res is ', res);
-      this.setState({modalIsOpen: false})
-      browserHistory.push('/profile');
-
-    }, err => {
-      console.log("we hit an error")
-      console.log(err);
-    });
+    this.props.signup(this.state.username, this.state.password, e)
+    this.setState({modalIsOpen: false})
   }
   handleUsernameChange(e){
     this.setState({username: e.target.value});
@@ -62,24 +45,20 @@ class Signup extends Component{
       <Modal
         isOpen={this.state.modalIsOpen}
       >
-          <h3 class="text-center">Signup</h3>
+          <h3 className="text-center">Signup</h3>
           <form className="form-horizontal" onSubmit={ this.handleSubmit }>
             <input
+                onChange={this.handleUsernameChange}
                 type="text"
                 name="username"
                 placeholder="username"
                 required
             />
             <input
+                onChange={this.handlePasswordChange}
                 type="password"
                 name="password"
                 placeholder="password"
-                required
-            />
-            <input
-                type="password"
-                name="confirmPassword"
-                placeholder="confirm password"
                 required
             />
             <input
