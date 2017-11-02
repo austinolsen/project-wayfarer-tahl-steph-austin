@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import './Cities.css'
+import PostList from './PostList'
 
 class Cities extends Component {
+
   render() {
     return (
       <div>
