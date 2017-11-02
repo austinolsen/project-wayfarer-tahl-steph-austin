@@ -22,7 +22,7 @@ class Header extends Component{
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
-                <li><Signup/></li>
+                <li><Signup signup={this.props.signup}/></li>
                 <li><Login login={this.props.login}/></li>
               </ul>
             </div>

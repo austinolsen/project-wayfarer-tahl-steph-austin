@@ -4,6 +4,7 @@ import $ from 'jquery-ajax';
 import Footer from './Footer'
 import Header from './Header'
 import Home from './Home'
+import Cities from './Cities'
 import PublicProfile from './PublicProfile'
 
 class Layout extends Component {
@@ -34,7 +35,30 @@ class Layout extends Component {
       // browserHistory.push('/profile');
       this.setState({isAuthenticated: true});
     }, err => {
-      console.log("we hit an error")
+      console.log("we hit an error with login!")
+      console.log(err);
+    });
+  }
+  handleSignupSubmit(username, password, e){
+    e.preventDefault();
+    console.log("handling Signup submit")
+    console.log(username)
+    console.log(password)
+    $.ajax({
+      method: 'POST',
+      url: `http://localhost:3001/signup`,
+      data: {
+        username: username,
+        password: password
+      }
+    })
+    .then(res => {
+      //NEED TO FINISH THIS LOGIC!!!
+      console.log('res is ', res);
+      // browserHistory.push('/profile');
+      this.setState({isAuthenticated: true});
+    }, err => {
+      console.log("we hit an error with signup!")
       console.log(err);
     });
   }
@@ -53,10 +77,11 @@ class Layout extends Component {
           <div>
               <Header
                 login={this.handleLoginSubmit.bind(this)}
+                signup={this.handleSignupSubmit.bind(this)}
                 isAuthed={this.state.isAuthenticated}
                 logout={this.handleLogout.bind(this)}
               />
-                {this.state.isAuthenticated===true ? <PublicProfile /> : <Home />}
+                {this.state.isAuthenticated===true ? <Cities/> : <Home />}
                 {this.props.children}
               <Footer />
           </div>
