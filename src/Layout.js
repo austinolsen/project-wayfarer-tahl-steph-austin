@@ -9,6 +9,8 @@ class Layout extends Component {
     this.state={
       id:'', isAuthenticated: false, path: this.props.location.pathname
     };
+    console.log(this.state.path)
+
   }
 
     render() {
