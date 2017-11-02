@@ -51,7 +51,7 @@ class Layout extends Component {
                 login={this.handleLoginSubmit.bind(this)}
                 isAuthed={this.state.isAuthenticated}
               />
-                {this.state.id !== '' ? <PublicProfile /> : <Home />}
+                {this.state.isAuthenticated===true ? <PublicProfile /> : <Home />}
                 {this.props.children}
               <Footer />
           </div>
