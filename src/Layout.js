@@ -38,6 +38,10 @@ class Layout extends Component {
       console.log(err);
     });
   }
+  handleLogout(){
+    console.log("logging out!");
+    this.setState({isAuthenticated: false})
+  }
 
   shouldShowHome(){
 
@@ -50,6 +54,7 @@ class Layout extends Component {
               <Header
                 login={this.handleLoginSubmit.bind(this)}
                 isAuthed={this.state.isAuthenticated}
+                logout={this.handleLogout.bind(this)}
               />
                 {this.state.isAuthenticated===true ? <PublicProfile /> : <Home />}
                 {this.props.children}
