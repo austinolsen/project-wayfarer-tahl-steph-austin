@@ -61,15 +61,32 @@ $(document).ready(function() {
       comment: "Since the first time I visit San Francisco until today..."
     }
   ];
+
+  citiesArray = [
+    {
+    name: "San Francisco",
+    img: "img/San Francisco.jpg",
+    description: "SF description"
+  }, {
+    name: "New York",
+    img: "img/New York.jpeg",
+    description: "New York description"
+  }, {
+    name: "Vancouver",
+    img: "img/Vancouver.jpg",
+    description: "Vancouver description"
+  }
+];
+
   avatarDb = [
-    'f-flower-1.jpg', 'f-flower-2.jpg', 'f-iris-1.jpg', 
+    'f-flower-1.jpg', 'f-flower-2.jpg', 'f-iris-1.jpg',
     'f-lily-1.jpg', 'f-rose-1.jpg', 'f-rose-2'
   ]
 
   $('#profile-avatar').attr('src','img/'+avatarDb[2]);
   $('#profile-name').html(userDb[0].firstName + ' ' + userDb[0].lastName);
   $('#profile-city').html(userDb[0].location);
-  for(var j=0; j<postDb.length; j++) { 
+  for(var j=0; j<postDb.length; j++) {
     $('.postSummary').append(`<p>Title: ${postDb[j].title}</p><p>Comment: ${postDb[j].comment}</p><br/>`)
   }
 
