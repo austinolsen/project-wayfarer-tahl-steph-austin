@@ -46,7 +46,7 @@ class Signup extends Component{
         isOpen={this.state.modalIsOpen}
       >
           <h3 className="text-center">Signup</h3>
-          <form className="form-horizontal" onSubmit={ this.handleSubmit }>
+          <form className="form-horizontal" onSubmit={ this.handleSignupSubmit }>
             <input
                 onChange={this.handleUsernameChange}
                 type="text"
