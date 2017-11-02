@@ -7,29 +7,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var db = require("./models")
 
 var app = express(),
-  router = express.Router();
-
-  userDb = [
-    {
-      username: "sammy",
-      password: "123456",
-      avatar: 1,
-      name: "Sam Spade",
-      location: "Casa Blanca"
-    }, {
-      username: "minny",
-      password: "abcdef",
-      avatar: 2,
-      name: "Minnie Mouse",
-      location: "Disneyland, CA"
-    }, {
-      username: "freddie",
-      password: "12ab34",
-      avatar: 3,
-      name: "Freddie Krueger",
-      location: "Your Dreams, MN"
-    }
-  ];
+    router = express.Router();
 
   //to config API to use body body-parser and look for JSON in req.body
 app.use(bodyParser.urlencoded({
@@ -91,6 +69,7 @@ app.post('/signup', function signup(req, res) {
     }
   )});
 app.post('/login', passport.authenticate('local'), function (req, res) {
+  console.log('in APP.POST for LOGIN')
   console.log(JSON.stringify(req.user));
   res.send(req.user);
 });
