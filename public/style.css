@@ -101,7 +101,7 @@ body {
   }
   .navbar li a, .navbar .navbar-brand {
       color: #d5d5d5 !important;
-      
+
   }
   .navbar-nav li a:hover {
       color: #fff !important;
@@ -146,5 +146,29 @@ body {
   }
 
   span.glyphicon.glyphicon-chevron-down {
-    font-size: 2em;
+    font-size: 1.2em;
+  }
+
+  .navControl {
+    font-size: 20px;
+    margin: 0 5px 0 5px;
+    padding-bottom: -4px;
+  }
+
+  .navControl:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  p#appName {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  p#createdBy {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  a {
+    padding: 0px;
   }

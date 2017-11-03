@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import Post from './Post'
+import './PostList.css'
 
 class PostList extends Component {
   render() {
     return (
       <div>
-        <h1>Here is our Post List page</h1>
         <Post />
       </div>
     )

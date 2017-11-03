@@ -17,13 +17,12 @@ class Header extends Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#myPage"><img alt="avatar" src="img/ladybug.png" height="28"/></a>
-              <p id="brandInitials">WF</p>
+              <a className="navbar-brand" ><img alt="avatar" src="img/ladybug.png" height="28"/></a>
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
-                <li><Signup signup={this.props.signup}/></li>
-                <li><Login login={this.props.login}/></li>
+                <li className="navControl"><Signup signup={this.props.signup}/></li>
+                <li className="navControl"><Login login={this.props.login}/></li>
               </ul>
             </div>
           </div>
@@ -42,12 +41,11 @@ class Header extends Component{
                 <span className="icon-bar"></span>
               </button>
               <a className="navbar-brand" href="#myPage"><img alt="avatar" src="img/ladybug.png" height="28"/></a>
-              <p id="brandInitials">WF</p>
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
-                <li><Link to={'/profile'}>My Profile</Link></li>
-                <li onClick={this.props.logout}>LOGOUT</li>
+                <li className="navControl"><Link to={'/profile'}>My Profile</Link></li>
+                <li className="navControl" onClick={this.props.logout}>LOGOUT</li>
               </ul>
             </div>
           </div>
