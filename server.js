@@ -86,6 +86,22 @@ commentsDb = [
     }
   ];
 
+  citiesArray = [
+    {
+    name: "San Francisco",
+    img: "img/San Francisco.jpg",
+    description: "SF description"
+  }, {
+    name: "New York",
+    img: "img/New York.jpeg",
+    description: "New York description"
+  }, {
+    name: "Vancouver",
+    img: "img/Vancouver.jpg",
+    description: "Vancouver description"
+  }
+];
+
 //**** POSTBLOG ROUTES ****
 //READ ALL by cityname for city page
 //http://url:port/blogs?cityName=foo
@@ -127,7 +143,7 @@ app.post('/blog', function createBlog(req, res) {
 	console.log("$$",req.body);
 	var newBlog = {};
 	var newIndex = postDb.length++;
-	newBlog.postRef = newIndex.toString(); 	
+	newBlog.postRef = newIndex.toString();
 	newBlog.username = req.body.username;
 	newBlog.location = req.body.location;
 	newBlog.title = req.body.title;
@@ -168,7 +184,7 @@ app.post('/signup', function signup(req, res) {
 
 //For LOGGING IN
 //http://url:port/login
-//need to pass user; returns __ 
+//need to pass user; returns __
 app.post('/login', passport.authenticate('local'), function (req, res) {
   console.log('in APP.POST for LOGIN')
   console.log(JSON.stringify(req.user));
