@@ -3,6 +3,27 @@ import './Cities.css'
 import PostList from './PostList'
 
 class Cities extends Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      citiesArray : [
+          {
+          name: "San Francisco",
+          img: "img/San Francisco.jpg",
+          description: "SF description"
+        }, {
+          name: "New York",
+          img: "img/New York.jpeg",
+          description: "New York description"
+        }, {
+          name: "Vancouver",
+          img: "img/Vancouver.jpg",
+          description: "Vancouver description"
+        }
+      ]
+  }
+  console.log(this.state.citiesArray[0].name);
+  }
 
   render() {
     return (
@@ -21,8 +42,8 @@ class Cities extends Component {
                       <div className="row">
                         <div className="col-md-12">
                           <a type="button">
-                            <img src="img/San Francisco.jpg" className="cityListImg" alt="San Francisco" width="200" height="100"/>
-                            San Francisco
+                            <img src={this.state.citiesArray[0].img} className="cityListImg" alt="SF" width="200" height="100"/>
+                           {this.state.citiesArray[0].name}
                           </a>
                         </div>
                       </div>
