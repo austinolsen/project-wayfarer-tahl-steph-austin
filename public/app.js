@@ -86,11 +86,12 @@ function loadGet(url,funcToCall) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log("^^^^ returned", this.readyState, this.status, this.responseText);
+      // console.log("^^^^ returned", this.readyState, this.status, this.responseText);
+      // console.log("^^^^ returned", this.responseXML);
       funcToCall(this.responseText);
       return;
     }
-    console.log("^^^^ error", this.readyState, this.status, this.responseText);
+    // console.log("^^^^ error", this.readyState, this.status, this.responseText);
   };
   xhttp.open("GET", url, false);     //false means it will wait
   xhttp.send();
@@ -102,11 +103,13 @@ var userProfile = loadGet("http://localhost:3001/profile?username=" + someUserna
 var userPosts =  loadGet("http://localhost:3001/userblogs?username=" + someUsername, showPosts);
 
 function showProfile (json) {
-  console.log("!@#$",json,json[0]);
-  searchUsername = someUsername;
+  // console.log("!@#$",json,json[0]);
+  // console.log("+++",JSON.parse(json));
+  var realJson = JSON.parse(json);
+  searchUsername = realJson[0].username;
   for (var j=0; j<userDb.length; j++)
     {if (userDb[j].username === searchUsername) {   
-        console.log('img/'+avatarDb[userDb[0].avatar]);
+        // console.log('img/'+avatarDb[userDb[0].avatar]);
         $('#profile-avatar').attr('src','img/'+avatarDb[userDb[j].avatar]);
         $('#profile-name').html(userDb[j].name);
         $('#profile-city').html(userDb[j].location);
@@ -115,14 +118,15 @@ function showProfile (json) {
 }
 
 function showPosts (json) {
-  console.log("@@@",json);
-  for(var j=0; j<postDb.length; j++) {
-      if (json.username == postDb[j].username) {
-
-    $('.postSummary').append(`<p>Title: ${postDb[j].title}</p><p>Comment: ${postDb[j].comment}</p><br/>`)
-      }
+  // console.log("@@@",json);
+  // console.log("@@0",json.length);
+  // console.log("@@1",typeof(json));
+  // console.log("@@2",JSON.parse(json));
+  var realJson = JSON.parse(json);
+  // console.log("@@2",json["username"]);
+  for(var j=0; j<realJson.length; j++) {
+      $('.postSummary').append(`<p>Title: ${realJson[j].title}</p><p>Comment: ${realJson[j].content}</p><br/>`)
   }
-
 }
 
   function handleError (a,b,c) {
