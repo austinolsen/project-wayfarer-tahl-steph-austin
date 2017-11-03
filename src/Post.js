@@ -4,16 +4,16 @@ class Post extends Component {
   render() {
     return (
       <div>
-        <div className="container">
+        <div id="postList">
           <div className="row">
             <div className="col-sm-12">
               <div className="media">
                 <div className="media-left">
-                  <img src="img/ladybug.png" className="media-object" alt="San Francisco" width="120" height="110"></img>
+                  <img id="postList" src="img/ladybug.png" className="media-object" alt="San Francisco" width="120" height="110"></img>
                 </div>
                 <div className="media-body">
 
-                  <h2>Title: This is the title of the post.</h2>
+                  <h5>Title: This is the title of the post.</h5>
                   <h2>
                     <i>Steph
                       <small>
@@ -48,14 +48,14 @@ class Post extends Component {
                       <label for="comment">Comment:</label>
                       <textarea className="form-control" rows="2" id="comment"></textarea>
                     </div>
-                    <input type="button" value="Submit"></input>
+                    <input type="button" className="btn" value="Submit"></input>
                   </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        </div>
     )
   }
 }

@@ -81,7 +81,7 @@ class Layout extends Component {
                 isAuthed={this.state.isAuthenticated}
                 logout={this.handleLogout.bind(this)}
               />
-                {this.state.isAuthenticated===true ? <Cities/> : <Home />}
+                {this.state.isAuthenticated===true ? <Cities /> : <Home />}
                 {this.props.children}
               <Footer />
           </div>
