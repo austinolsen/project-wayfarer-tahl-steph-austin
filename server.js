@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
 commentsDb = [
     {
       postRef: "2",
-      username: "sammy",
+      username: "tahl",
       comment: "very interesting article.  I would recommend you have a cigar.",
       date: "Thu Jul 02 1954 12:09:08 GMT-0700 (PDT)"
     }, {
@@ -71,14 +71,14 @@ commentsDb = [
       date: "Thu Jan 02 2017 12:09:08 GMT-0700 (PDT)"
     }, {
       postRef: "1",
-      username: "freddie",
+      username: "tahl",
       location: "London",
       title: "Make London your next stop",
       content: "London is a great place to scare people in their dreams",
       date: "Thu May 22 2017 12:09:08 GMT-0700 (PDT)"
     }, {
       postRef: "2",
-      username: "sammy",
+      username: "tahl",
       location: "San Francisco",
       title: "San Francisco is a great place for shaking it",
       content: "Since the first time I visited San Francisco until today...",
@@ -129,8 +129,9 @@ app.get('/blog', function getBlogById(req, res){
 //http://url:port/userblogs?username=foo
 app.get('/userblogs', function getBlogByUser(req, res){
 	var username = decodeURI(req.query.username);
+  console.log("##1",username,postDb[0].username);
 	var postsIWant = postDb.filter(function (entry) {
-		return entry.username === username;
+		return entry.username == username;
 	});
 	console.log("##",username,postsIWant);
 	res.json(postsIWant);

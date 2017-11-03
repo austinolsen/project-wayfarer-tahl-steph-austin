@@ -2,25 +2,22 @@ $(document).ready(function() {
   console.log("app js is loaded!");
   userDb = [
     {
-      username: "sammy",
+      username: "tahl",
       token: "123456",
       avatar: 1,
-      firstName: "Sam",
-      lastName: "Spade",
+      name: "Sam Spade",
       location: "Casa Blanca"
     }, {
       username: "minny",
       token: "abcdef",
       avatar: 2,
-      firstName: "Minnie",
-      lastName: "Mouse",
+      name: "Minnie Mouse",
       location: "Disneyland, CA"
     }, {
       username: "freddie",
       token: "12ab34",
       avatar: 3,
-      firstName: "Freddie",
-      lastName: "Kruger",
+      name: "Freddie Kruger",
       location: "Your Dreams, MN"
     }
   ];
@@ -57,7 +54,7 @@ $(document).ready(function() {
     }, {
       postRef: "19",
       location: "San Francisco",
-      title: "San Francisco is a great place for shaking it",
+      title: "San Francisco is a great plce for shaking it",
       comment: "Since the first time I visit San Francisco until today..."
     }
   ];
@@ -79,20 +76,64 @@ $(document).ready(function() {
 ];
 
   avatarDb = [
-    'f-flower-1.jpg', 'f-flower-2.jpg', 'f-iris-1.jpg',
+    'f-flower-1.jpg', 'f-flower-2.jpeg', 'f-iris-1.jpg',
     'f-lily-1.jpg', 'f-rose-1.jpg', 'f-rose-2'
   ]
 
-  $('#profile-avatar').attr('src','img/'+avatarDb[2]);
-  $('#profile-name').html(userDb[0].firstName + ' ' + userDb[0].lastName);
-  $('#profile-city').html(userDb[0].location);
+
+
+function loadGet(url,funcToCall) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("^^^^ returned", this.readyState, this.status, this.responseText);
+      funcToCall(this.responseText);
+      return;
+    }
+    console.log("^^^^ error", this.readyState, this.status, this.responseText);
+  };
+  xhttp.open("GET", url, false);     //false means it will wait
+  xhttp.send();
+}
+
+var someUsername = 'tahl';
+
+var userProfile = loadGet("http://localhost:3001/profile?username=" + someUsername, showProfile);
+var userPosts =  loadGet("http://localhost:3001/userblogs?username=" + someUsername, showPosts);
+
+function showProfile (json) {
+  console.log("!@#$",json,json[0]);
+  searchUsername = someUsername;
+  for (var j=0; j<userDb.length; j++)
+    {if (userDb[j].username === searchUsername) {   
+        console.log('img/'+avatarDb[userDb[0].avatar]);
+        $('#profile-avatar').attr('src','img/'+avatarDb[userDb[j].avatar]);
+        $('#profile-name').html(userDb[j].name);
+        $('#profile-city').html(userDb[j].location);
+      }
+    }
+}
+
+function showPosts (json) {
+  console.log("@@@",json);
   for(var j=0; j<postDb.length; j++) {
+      if (json.username == postDb[j].username) {
+
     $('.postSummary').append(`<p>Title: ${postDb[j].title}</p><p>Comment: ${postDb[j].comment}</p><br/>`)
+      }
   }
+
+}
+
+  function handleError (a,b,c) {
+    console.log("Ajax error!",a,b,c);
+  }
+
+ 
 
 
   // Initialize Tooltip
-  $('[data-toggle="tooltip"]').tooltip();
+  // $('[data-toggle="tooltip"]').tooltip();
 
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
