@@ -131,7 +131,7 @@ app.get('/userblogs', function getBlogByUser(req, res){
 	var username = decodeURI(req.query.username);
   console.log("##1",username,postDb[0].username);
 	var postsIWant = postDb.filter(function (entry) {
-		return entry.username == username;
+		return entry.username === username;
 	});
 	console.log("##",username,postsIWant);
 	res.json(postsIWant);
