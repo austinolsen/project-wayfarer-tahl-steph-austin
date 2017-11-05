@@ -42,15 +42,9 @@ class Cities extends Component {
                     <div className="city">
                       <div className="row">
                         <div className="col-md-12">
-<<<<<<< 4124827113f5ca7ee665bc9541daefad5caa4ecc
                           <a type="button" name="sfClick">
                             <img src={this.state.citiesArray[0].img} className="cityListImg" alt="SF" width="200" height="100"/>
                            {this.state.citiesArray[0].name}
-=======
-                          <a type="button">
-                            <img src="img/San Francisco.jpg" className="cityListImg" alt="San Francisco" width="100" height="50"/>
-                            San Francisco
->>>>>>> update cities bootstrap
                           </a>
                         </div>
                       </div>
@@ -60,13 +54,8 @@ class Cities extends Component {
                     <div className="city">
                       <div className="row">
                         <div className="col-md-12">
-<<<<<<< 4124827113f5ca7ee665bc9541daefad5caa4ecc
                           <a type="button" name="nyClick">
                             <img src="img/New York.jpeg" className="cityListImg" alt="New York" width="200" height="100"/>
-=======
-                          <a type="button">
-                            <img src="img/New York.jpeg" className="cityListImg" alt="New York" width="100" height="50"/>
->>>>>>> update cities bootstrap
                             New York
                           </a>
                         </div>
@@ -77,13 +66,8 @@ class Cities extends Component {
                     <div className="city">
                       <div className="row">
                         <div className="col-md-12">
-<<<<<<< 4124827113f5ca7ee665bc9541daefad5caa4ecc
                           <a type="button" name="vcClick">
                             <img src="img/Vancouver.jpg" className="cityListImg" alt="Vancouver" width="200" height="100"/>
-=======
-                          <a type="button">
-                            <img src="img/Vancouver.jpg" className="cityListImg" alt="Vancouver" width="100" height="50"/>
->>>>>>> update cities bootstrap
                             Vancouver
                           </a>
                         </div>
