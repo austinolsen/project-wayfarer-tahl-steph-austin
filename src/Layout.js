@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery-ajax';
-// import {browserHistory} from 'react-router';
+import {browserHistory} from 'react-router';
 import Footer from './Footer'
 import Header from './Header'
 import Home from './Home'
@@ -32,7 +32,7 @@ class Layout extends Component {
     })
     .then(res => {
       console.log('res is ', res);
-      // browserHistory.push('/profile');
+      browserHistory.push('/cities');
       this.setState({isAuthenticated: true});
     }, err => {
       console.log("we hit an error with login!")
@@ -44,6 +44,8 @@ class Layout extends Component {
     console.log("handling Signup submit")
     console.log(username)
     console.log(password)
+    //if password and confirm password match, run the fn
+    //try bootstrap validator
     $.ajax({
       method: 'POST',
       url: `http://localhost:3001/signup`,
@@ -55,8 +57,8 @@ class Layout extends Component {
     .then(res => {
       //NEED TO FINISH THIS LOGIC!!!
       console.log('res is ', res);
-      // browserHistory.push('/profile');
       this.setState({isAuthenticated: true});
+      browserHistory.push('/profile');
     }, err => {
       console.log("we hit an error with signup!")
       console.log(err);
@@ -65,6 +67,13 @@ class Layout extends Component {
   handleLogout(){
     console.log("logging out!");
     this.setState({isAuthenticated: false})
+    browserHistory.push('/')
+  }
+  visitProfile(){
+    browserHistory.push('/profile');
+  }
+  visitCities(){
+    browserHistory.push('/cities');
   }
 
   shouldShowHome(){
@@ -80,8 +89,9 @@ class Layout extends Component {
                 signup={this.handleSignupSubmit.bind(this)}
                 isAuthed={this.state.isAuthenticated}
                 logout={this.handleLogout.bind(this)}
+                myProfile={this.visitProfile.bind(this)}
+                cities={this.visitCities.bind(this)}
               />
-                {this.state.isAuthenticated===true ? <Cities /> : <Home />}
                 {this.props.children}
               <Footer />
           </div>

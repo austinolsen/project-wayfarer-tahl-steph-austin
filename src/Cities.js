@@ -32,8 +32,9 @@ class Cities extends Component {
         <div id="cityPage">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-sm-5">
-                <h2>Cities</h2>
+
+              <div className="col-sm-5 cityRow">
+              <h2>Cities</h2>
                 <br></br>
                 <div id="cityTarget">
                   <div className="btn-group">
@@ -76,7 +77,7 @@ class Cities extends Component {
                 </div>
                 <br></br>
               </div>
-              <div className="col-sm-6">
+              <div className="col-sm-7">
                 <div className="row">
                   <div id="selectedCity">
 
@@ -90,8 +91,6 @@ class Cities extends Component {
                     </div>
                   </div>
                 </div>
-
-                  <h2>City Posts</h2>
 
                   <PostList />
 

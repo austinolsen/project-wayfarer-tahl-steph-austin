@@ -44,8 +44,9 @@ class Header extends Component{
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
-                <li className="navControl"><Link to={'/profile'}>My Profile</Link></li>
-                <li className="navControl" onClick={this.props.logout}>LOGOUT</li>
+                <li onClick={this.props.cities}>CITIES</li>
+                <li onClick={this.props.myProfile}>MY PROFILE</li>
+                <li onClick={this.props.logout}>LOGOUT</li>
               </ul>
             </div>
           </div>

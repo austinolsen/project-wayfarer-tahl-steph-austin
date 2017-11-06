@@ -6,7 +6,7 @@ class Post extends Component {
       <div>
         <div id="postList">
           <div className="row">
-            <div className="col-sm-12">
+            <div className="col-sm-7">
               <div className="media">
                 <div className="media-left">
                   <img id="postList" src="img/ladybug.png" className="media-object" alt="San Francisco" width="120" height="110"></img>
@@ -45,7 +45,7 @@ class Post extends Component {
                   <br></br>
                   <form>
                     <div className="form-group">
-                      <label for="comment">Comment:</label>
+                      <label htmlFor="comment">Comment:</label>
                       <textarea className="form-control" rows="2" id="comment"></textarea>
                     </div>
                     <input type="button" className="btn" value="Submit"></input>
