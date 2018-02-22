@@ -6,14 +6,14 @@ class Post extends Component {
       <div>
         <div id="postList">
           <div className="row">
-            <div className="col-sm-7">
+            <div className="col-sm-12">
               <div className="media">
                 <div className="media-left">
                   <img id="postList" src="img/ladybug.png" className="media-object" alt="San Francisco" width="120" height="110"></img>
                 </div>
                 <div className="media-body">
 
-                  <h5>Title: This is the title of the post.</h5>
+                  <h3>A new blog</h3>
                   <h2>
                     <i>Steph
                       <small>
